@@ -33,7 +33,7 @@ if __name__ == '__main__':
             response = requests.get(url=txt_url)
             
             # 保存
-            with open('v2rayfree.txt', 'w', encoding='utf-8') as f:
+            with open('mibei.txt', 'w', encoding='utf-8') as f:
                 f.write(response.text)    
             
             print('获取成功')
