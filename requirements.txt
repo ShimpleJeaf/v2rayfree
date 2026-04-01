@@ -1,0 +1,8 @@
+# fetch.py
+pyyaml
+requests
+loguru
+
+# mibei.py
+bs4
+lxml
