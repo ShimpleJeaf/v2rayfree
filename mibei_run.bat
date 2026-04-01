@@ -1,4 +1,4 @@
-call venv\Scripts\activate.bat
+call .venv\Scripts\activate.bat
 
 python mibei.py https://www.mibei77.com
 
