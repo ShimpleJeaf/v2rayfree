@@ -217,7 +217,7 @@ class Node:
                 self.data['h2-opts'] = opts
             elif v['net'] == 'grpc' and 'path' in v:
                 self.data['grpc-opts'] = {'grpc-service-name': v['path']}
-        elif self.type == 'vless' or self.type == 'socks' or self.type == 'hysteria2':
+        elif self.type == 'vless' or self.type == 'socks': #or self.type == 'hysteria2':
             self.data = {}
             uuid, d = dt.split('@')
             
