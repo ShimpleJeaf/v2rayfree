@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import os
 import time
 import sys
+import re
 
 # main
 if __name__ == '__main__':
@@ -14,19 +15,19 @@ if __name__ == '__main__':
             url = sys.argv[1]
             response = requests.get(url=url)
             soup = BeautifulSoup(response.content.decode('utf-8'), 'lxml')
-            title = soup.find(class_='entry-title')
+            title = soup.find(class_='item-title')
             a = title.find('a')
             href = a['href'].strip()
             
             response = requests.get(url=href)
             soup = BeautifulSoup(response.content.decode('utf-8'), 'lxml')
-            post_body = soup.find(class_='post-body entry-content')
+            post_body = soup.find(class_='entry-content')
             p = post_body.find('p')
             txt_url = ''
             while p:
                 text = p.text
                 if 'https://' in text and '.txt' in text:
-                    txt_url = text
+                    txt_url = re.findall(r'https://.*?txt', text)[0]
                     break
                 p = p.find_next_sibling('p')
                     
