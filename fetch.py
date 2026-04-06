@@ -694,7 +694,7 @@ def merge(source_obj: Source, sourceId=-1) -> None:
                 # merged[h].data.update(n.data)
                 if h not in same:
                     same[h] = [n]
-                elif len(same[h]) < 3: # 最多只保留3个
+                elif len(same[h]) < 2: # 最多只保留3个
                     same[h].append(n)
             if h not in used:
                 used[h] = {}
