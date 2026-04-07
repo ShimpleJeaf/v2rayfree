@@ -892,8 +892,8 @@ def main():
             # else: unsupports += 1
             txt += p.url + '\n'
         except: traceback.print_exc()
-    for p in unknown:
-        txt += p+'\n'
+    # for p in unknown:
+    #     txt += p+'\n'
     for hashp, listp in same.items():
         for p in listp:
             txt += p.url + '\n'
