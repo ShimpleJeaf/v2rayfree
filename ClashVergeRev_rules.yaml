@@ -1,0 +1,8 @@
+# Profile Enhancement Merge Template for Clash Verge
+
+profile:
+  store-selected: true
+
+rules:
+  - DOMAIN-SUFFIX,gh-proxy.com,DIRECT
+  - DOMAIN-SUFFIX,gh-proxy.org,DIRECT
