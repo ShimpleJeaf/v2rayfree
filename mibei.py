@@ -14,23 +14,28 @@ if __name__ == '__main__':
         try:
             url = sys.argv[1]
             response = requests.get(url=url)
+            print("进入首页")
             soup = BeautifulSoup(response.content.decode('utf-8'), 'lxml')
-            title = soup.find(class_='item-title')
+            title = soup.find(class_='item-heading')
             a = title.find('a')
             href = a['href'].strip()
+            print("找到最新发布页")
             
             response = requests.get(url=href)
+            print("进入最新发布页")
             soup = BeautifulSoup(response.content.decode('utf-8'), 'lxml')
-            post_body = soup.find(class_='entry-content')
+            post_body = soup.find(class_='article-content')
             p = post_body.find('p')
             txt_url = ''
             while p:
                 text = p.text
                 if 'https://' in text and '.txt' in text:
                     txt_url = re.findall(r'https://.*?txt', text)[0]
+                    print("找到最新订阅地址")
                     break
                 p = p.find_next_sibling('p')
-                    
+                 
+            print("获取订阅内容")   
             response = requests.get(url=txt_url)
             
             # 保存
