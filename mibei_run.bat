@@ -2,7 +2,7 @@ call .venv\Scripts\activate.bat
 
 python mibei.py https://www.mibei77.com
 
-python fetch.py
+::python fetch.py
 
 git commit -a -m "update" --quiet
 
