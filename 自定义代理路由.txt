@@ -1,0 +1,12 @@
+geosite:geolocation-!cn,
+api.ipapi.is,
+usda.gov,
+ip.me,
+cmake.org,
+amazonaws.com,
+python.org,
+bytereef.org,
+lunarg.com,
+groq.com,
+torrentz2.nz,
+bitsearch.eu
