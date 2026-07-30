@@ -9,6 +9,10 @@ python renumber.py
 git commit -a -m "update" --quiet
 
 if %errorlevel% equ 0 (
+	git pull
+)
+
+if %errorlevel% equ 0 (
 	git push
 )
 
