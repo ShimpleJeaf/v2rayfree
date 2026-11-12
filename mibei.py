@@ -16,7 +16,7 @@ if __name__ == '__main__':
             response = requests.get(url=url)
             print("进入首页")
             soup = BeautifulSoup(response.content.decode('utf-8'), 'lxml')
-            title = soup.find(class_='entry-title')
+            title = soup.find(class_='item-heading')
             a = title.find('a')
             href = a['href'].strip()
             print("找到最新发布页")
@@ -24,7 +24,7 @@ if __name__ == '__main__':
             response = requests.get(url=href)
             print("进入最新发布页")
             soup = BeautifulSoup(response.content.decode('utf-8'), 'lxml')
-            post_body = soup.find(class_='yd-unlocked-content')
+            post_body = soup.find(class_='article-content')
             p = post_body.find('p')
             txt_url = ''
             findRay = False
